@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Backend RBAC Task",
   description: "Production ready scalable backend system",
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({

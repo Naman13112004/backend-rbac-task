@@ -1,12 +1,23 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import logger from "@/lib/logger";
+import { rateLimit } from "./rate-limiter";
 
 export function apiHandler(
   handler: (req: Request, context: any) => Promise<NextResponse>
 ) {
   return async (req: Request, context: any) => {
     try {
+      const ip = req.headers.get("x-forwarded-for") || "127.0.0.1";
+      
+      const rlResult = await rateLimit(ip);
+      if (!rlResult.success) {
+        logger.warn(`Rate limit exceeded for IP: ${ip}`);
+        return NextResponse.json({ success: false, message: "Too many requests" }, { status: 429 });
+      }
+
+      logger.info(`${req.method} ${req.url} - IP: ${ip}`);
+
       return await handler(req, context);
     } catch (error: any) {
       if (error instanceof z.ZodError) {

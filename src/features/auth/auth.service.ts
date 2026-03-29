@@ -5,7 +5,7 @@ import { z } from "zod";
 import { RegisterSchema, LoginSchema } from "./auth.schema";
 
 export const register = async (data: z.infer<typeof RegisterSchema>) => {
-  const { email, password, name } = data;
+  const { email, password, name, role } = data;
 
   const existingUser = await db.user.findUnique({ where: { email } });
   if (existingUser) {
@@ -19,6 +19,7 @@ export const register = async (data: z.infer<typeof RegisterSchema>) => {
       email,
       name,
       password: hashedPassword,
+      role: role || "USER",
     },
   });
 

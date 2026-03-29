@@ -94,6 +94,17 @@ export default function RegisterPage() {
             />
             {errors.password && <p className="text-xs text-red-500">{errors.password.message}</p>}
           </div>
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Role</label>
+            <select
+              {...register("role")}
+              className={`flex h-10 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-1 transition-all duration-200 ${errors.role ? "border-red-500" : ""}`}
+            >
+              <option value="USER">User (Default)</option>
+              <option value="ADMIN">Admin</option>
+            </select>
+            {errors.role && <p className="text-xs text-red-500">{errors.role.message}</p>}
+          </div>
           <Button type="submit" className="w-full" disabled={isSubmitting}>
             {isSubmitting ? "Creating account..." : "Register"}
           </Button>

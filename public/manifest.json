@@ -1,0 +1,16 @@
+{
+  "name": "Backend RBAC Task",
+  "short_name": "RBAC App",
+  "description": "A production-ready scalable backend system with a clean Next.js React frontend.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#020617",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
