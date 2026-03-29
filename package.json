@@ -13,6 +13,10 @@
     "@hookform/resolvers": "^5.2.2",
     "@prisma/client": "^6.19.2",
     "@tailwindcss/postcss": "^4.2.2",
+    "@types/bcrypt": "^6.0.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "autoprefixer": "^10.4.27",
     "bcrypt": "^6.0.0",
     "clsx": "^2.1.1",
@@ -20,6 +24,7 @@
     "lucide-react": "^1.7.0",
     "next": "16.2.1",
     "postcss": "^8.5.8",
+    "prisma": "^6.19.2",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-hook-form": "^7.72.0",
@@ -27,19 +32,14 @@
     "redis": "^5.11.0",
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.2",
+    "typescript": "^5",
     "winston": "^3.19.0",
     "zod": "^4.3.6",
     "zustand": "^5.0.12"
   },
   "devDependencies": {
-    "@types/bcrypt": "^6.0.0",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
-    "prettier": "^3.8.1",
-    "prisma": "^6.19.2",
-    "typescript": "^5"
+    "prettier": "^3.8.1"
   }
 }
