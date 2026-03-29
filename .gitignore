@@ -39,3 +39,21 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# PWA / Service Worker (auto-generated)
+public/sw.js
+public/workbox-*.js
+public/worker-*.js
+public/sw-*.js
+public/precache-manifest*.js
+public/fallback-*.js
+
+# next-pwa generated files
+public/_next/static/workbox-*.js
+public/_next/static/sw.js
+public/_next/static/chunks/webpack-*.js
+
+# Workbox
+**/workbox-*.js
+**/sw.js
+**/precache-manifest*.js
